@@ -1,0 +1,3 @@
+com/example/model/User.class
+com/example/repository/UserRepository.class
+com/example/UserAuthAppApplication.class
