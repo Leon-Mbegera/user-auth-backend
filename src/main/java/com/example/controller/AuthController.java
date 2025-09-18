@@ -23,6 +23,11 @@ public class AuthController {
         String token = authService.login(userRequest.getUsername(), userRequest.getPassword());
         return ResponseEntity.ok(token);
     }
+
+    @GetMapping("/protected")
+    public ResponseEntity<String> protectedRoute() {
+        return ResponseEntity.ok("This is a protected endpoint.");
+    }
 }
 
 class UserRequest {
