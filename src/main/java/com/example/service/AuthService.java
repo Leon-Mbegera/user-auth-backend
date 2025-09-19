@@ -1,11 +1,14 @@
 package com.example.service;
 
 import com.example.model.User;
+import com.example.model.Role;
 import com.example.repository.UserRepository;
 import com.example.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
 
 @Service
 public class AuthService {
@@ -23,6 +26,11 @@ public class AuthService {
         user.setUsername(username);
         user.setPassword(passwordEncoder.encode(password));
         user.setEmail(email);
+
+        Role userRole = new Role();
+        userRole.setName("ROLE_USER");
+        user.getRoles().add(userRole);
+
         return userRepository.save(user);
     }
 
