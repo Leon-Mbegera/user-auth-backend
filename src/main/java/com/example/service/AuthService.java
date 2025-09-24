@@ -3,6 +3,7 @@ package com.example.service;
 import com.example.model.User;
 import com.example.model.Role;
 import com.example.repository.UserRepository;
+import com.example.repository.RoleRepository;
 import com.example.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +17,9 @@ public class AuthService {
     private UserRepository userRepository;
 
     @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -27,8 +31,7 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(password));
         user.setEmail(email);
 
-        Role userRole = new Role();
-        userRole.setName("ROLE_USER");
+        Role userRole = roleRepository.findByName("ROLE_USER").orElseThrow(() -> new RuntimeException("ROLE_USER not found."));
         user.getRoles().add(userRole);
 
         return userRepository.save(user);
