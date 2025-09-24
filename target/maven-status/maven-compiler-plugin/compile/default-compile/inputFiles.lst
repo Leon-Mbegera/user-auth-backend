@@ -5,6 +5,7 @@
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Application.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Role.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/User.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/repository/RoleRepository.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/repository/UserRepository.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/service/AuthService.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/util/JwtUtil.java
