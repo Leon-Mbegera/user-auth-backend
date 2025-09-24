@@ -1,6 +1,7 @@
 package com.example.config;
 
 import com.example.util.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,7 +19,7 @@ public class SecurityConfig {
     private final JwtUtil jwtUtil;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    // Constructor injection - like Rails dependency injection
+    @Autowired
     public SecurityConfig(JwtUtil jwtUtil, JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.jwtUtil = jwtUtil;
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
@@ -27,21 +28,23 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Like skip_before_action :verify_authenticity_token
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll() // Like skip_before_action :authenticate_user!, only: [:register, :login]
-                        .anyRequest().authenticated() // Like before_action :authenticate_user! for all other actions
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/applications/**").hasRole("USER")
+                        .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Like Rails API mode - no sessions
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class); // Like a before_action filter
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Like using bcrypt gem in Rails
+        return new BCryptPasswordEncoder();
     }
 }
