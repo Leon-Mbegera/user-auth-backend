@@ -38,6 +38,12 @@ public class ApplicationController {
     return ResponseEntity.ok(applications);
   }
 
+  @PutMapping("/api/admin/applications/{id}")
+  public ResponseEntity<Application> updateApplicationStatus(@PathVariable Long id,
+      @RequestBody Map<String, String> body, Authentication authentication) {
 
+    Application application = applicationService.updateApplicationStatus(id, body.get("status"), authentication.getName());
 
+    return ResponseEntity.ok(application);
+  }
 }
