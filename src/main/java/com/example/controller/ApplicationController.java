@@ -31,6 +31,13 @@ public class ApplicationController {
     return ResponseEntity.ok(applications);
   }
 
+  @GetMapping("/api/admin/applications")
+  public ResponseEntity<List<Application>> getAllApplications(Authentication authentication) {
+    List<Application> applications = applicationService.getAllApplications(authentication.getName());
+
+    return ResponseEntity.ok(applications);
+  }
+
 
 
 }
