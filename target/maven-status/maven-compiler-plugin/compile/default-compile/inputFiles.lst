@@ -1,12 +1,15 @@
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/UserAuthAppApplication.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/JwtAuthenticationFilter.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/SecurityConfig.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/controller/ApplicationController.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/controller/AuthController.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Application.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/ApplicationStatus.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Role.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/User.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/repository/ApplicationRepository.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/repository/RoleRepository.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/repository/UserRepository.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/service/ApplicationService.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/service/AuthService.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/util/JwtUtil.java
