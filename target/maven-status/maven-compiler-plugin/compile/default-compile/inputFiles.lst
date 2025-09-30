@@ -4,6 +4,8 @@
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/SecurityConfig.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/controller/ApplicationController.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/controller/AuthController.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/dto/ApplicationRequest.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/dto/UpdateStatusRequest.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Application.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/ApplicationStatus.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/model/Role.java
