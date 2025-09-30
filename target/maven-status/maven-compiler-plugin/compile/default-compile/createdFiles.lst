@@ -1,4 +1,5 @@
 com/example/repository/UserRepository.class
+com/example/config/OpenApiConfig.class
 com/example/repository/ApplicationRepository.class
 com/example/controller/AuthController.class
 com/example/controller/ApplicationController.class
