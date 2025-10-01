@@ -1,4 +1,5 @@
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/UserAuthAppApplication.java
+/home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/GlobalExceptionHandler.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/JwtAuthenticationFilter.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/OpenApiConfig.java
 /home/leon/Desktop/Test Projects/user-auth-app/src/main/java/com/example/config/SecurityConfig.java

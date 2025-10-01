@@ -1,17 +1,1 @@
-com/example/repository/UserRepository.class
-com/example/config/OpenApiConfig.class
-com/example/repository/ApplicationRepository.class
-com/example/controller/AuthController.class
-com/example/controller/ApplicationController.class
-com/example/controller/UserRequest.class
-com/example/config/JwtAuthenticationFilter.class
-com/example/service/AuthService.class
-com/example/model/User.class
-com/example/util/JwtUtil.class
-com/example/service/ApplicationService.class
-com/example/config/SecurityConfig.class
-com/example/model/Role.class
-com/example/model/ApplicationStatus.class
-com/example/model/Application.class
 com/example/UserAuthAppApplication.class
-com/example/repository/RoleRepository.class
