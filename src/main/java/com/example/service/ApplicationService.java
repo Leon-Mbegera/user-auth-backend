@@ -22,7 +22,7 @@ public class ApplicationService {
 
   public Application submitApplication(String username, String fullName, String address, Double loanAmount,
       String documentPath) {
-    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found."));
+    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
     Application application = new Application();
 
     application.setUser(user);
@@ -35,16 +35,16 @@ public class ApplicationService {
   }
 
   public List<Application> getUserApplications(String username) {
-    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found."));
+    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
 
     return applicationRepository.findByUserId(user.getId());
   }
 
   public List<Application> getAllApplications(String username) {
-    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found."));
+    User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
 
     if (!user.getRoles().stream().anyMatch(role -> role.getName().equals("ROLE_ADMIN"))) {
-      throw new AccessDeniedException("Admin rights required.");
+      throw new AccessDeniedException("Admin rights required");
     }
 
     return applicationRepository.findAll();
@@ -54,10 +54,10 @@ public class ApplicationService {
     User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found."));
 
     if (!user.getRoles().stream().anyMatch(role -> role.getName().equals("ROLE_ADMIN"))) {
-      throw new AccessDeniedException("Admin rights required.");
+      throw new AccessDeniedException("Admin rights required");
     }
     Application application = applicationRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Application not found."));
+        .orElseThrow(() -> new RuntimeException("Application not found"));
     application.setStatus(ApplicationStatus.valueOf(status));
 
     return applicationRepository.save(application);
